@@ -24,7 +24,7 @@ if (message.content.startsWith(prefix)) {
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 	
-	if (command === 'getkey' && message.channel.id === '678913388109365251') {
+	if (command === 'getkey') {
 		if (talkedRecently.has(message.author.id)) {
             message.channel.send("You can receive free key" + message.author);
     } else {
