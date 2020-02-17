@@ -9,7 +9,7 @@ client.on('ready', () => {
 	client.user.setPresence({
         status: "online",
         game: {
-            name: "Phát mã dùng thử nè :3",
+            name: "Free Key :3",
             type: "STREAMING"
         }
     }); 
@@ -24,18 +24,18 @@ if (message.content.startsWith(prefix)) {
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 	
-	if (command === 'getkey' && message.channel.id === '678429357798326365') {
+	if (command === 'getkey' && message.channel.id === '678913388109365251') {
 		if (talkedRecently.has(message.author.id)) {
-            message.channel.send("Bạn đã từng nhận mã dùng thử rồi " + message.author);
+            message.channel.send("You can receive free key" + message.author);
     } else {
 		message.delete(1);
 		console.log(JSON.stringify(test.id[0]));
 		const embed = new Discord.RichEmbed();
 			embed.setColor('#7cfc00');
-			embed.setDescription(JSON.stringify(test.id[0]).slice(1,-1));
-			embed.setFooter('Bot nhận mã dùng thử', 'https://cdn.discordapp.com/avatars/440183187071565847/9c8af7e6708187fff54df15f291a2cee.png?size=2048')
+			embed.setDescription('**'+JSON.stringify(test.id[0]).slice(1,-1)+'**');
+			embed.setFooter('FreeKey', 'https://media.discordapp.net/attachments/678913388109365251/678920510326833173/shirt-1518262621-717fa1f4d5e416e9eda600d78b8c58ac.png?width=424&height=424')
 			embed.setURL('https://www.facebook.com/teemo.love.tristana');
-			embed.setAuthor('Mã dùng thử của bạn');
+			embed.setAuthor('Here your key :3');
 		client.users.get(message.author.id).send(embed);
 		test.id.splice(0,1);
         talkedRecently.add(message.author.id);
