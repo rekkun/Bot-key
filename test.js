@@ -10,7 +10,6 @@ var conn = mysql.createConnection('mysql://be2b476c9358e7:7c276e3d@us-cdbr-iron-
 conn.connect(function(err) {
   if (err) console.log(err)
 	else console.log("Connected!");
-});
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -64,6 +63,8 @@ if (message.content.startsWith(prefix)) {
     }
 
 }
+});
+	
 });
 
 client.login(auth.token);
