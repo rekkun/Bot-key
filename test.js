@@ -42,7 +42,7 @@ if (message.content.startsWith(prefix)) {
             message.channel.send("You cant receive free key" + message.author);
     } else {
 		message.delete(1);
-		var sql = "SELECT `key_value` FROM `key` ORDER BY `status` DESC LIMIT 0,1"
+		var sql = "SELECT `key_value` FROM `key` ORDER BY `id` DESC LIMIT 0,1"
 		conn.query(sql, function(err, results) {
 			
             if (err) {var ans = err};
@@ -60,7 +60,7 @@ if (message.content.startsWith(prefix)) {
           talkedRecently.delete(message.author.id);
         }, 1000000000);
 		});
-		var sql2 = "DELETE FROM `key` WHERE status='0' ORDER BY status DESC LIMIT 1";
+		var sql2 = "DELETE FROM `key` WHERE status='0' ORDER BY id DESC LIMIT 1";
 		conn.query(sql, function(err, results) {
             if (err) {message.channel.send("Error!")};
             message.channel.send("Success!");
