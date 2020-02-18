@@ -6,15 +6,15 @@ const talkedRecently = new Set();
 const mysql = require('mysql');
  
 var conn = mysql.createConnection({
-  database: 'botdiscord',
-  host: "207.148.70.116",
-  user: "botdiscord",
-  password: "Zhang6666"
+  database: 'heroku_f5ade555c3d61d0',
+  host: "us-cdbr-iron-east-04.cleardb.net",
+  user: "be2b476c9358e7",
+  password: "7c276e3d"
 });
  
 conn.connect(function(err) {
-  if (err) console.log(err);
-  console.log("Connected!");
+  if (err) console.log(err)
+	else console.log("Connected!");
 });
 
 client.on('ready', () => {
@@ -43,8 +43,9 @@ if (message.content.startsWith(prefix)) {
     } else {
 		message.delete(1);
 		console.log(JSON.stringify(test.id[0]));
-		var sql = "SELECT id, key_value, status FROM key WHERE status = 0 ORDER BY id ASC LIMIT 0,1"
+		var sql = "SELECT `key_value` FROM `key` ORDER BY `status` ASC LIMIT 1,1"
 		conn.query(sql, function(err, results) {
+			
             if (err) {var ans = err};
             (ans) => {console(results)};
 			
@@ -60,12 +61,11 @@ if (message.content.startsWith(prefix)) {
           talkedRecently.delete(message.author.id);
         }, 1000000000);
 		});
-		var sql2 = "UPDATE key SET status=1 WHERE status=0 ORDER BY id ASC LIMIT 0,1";
+		var sql2 = "UPDATE `key` SET status='1' WHERE status='0' ORDER BY status ASC LIMIT 1";
 		conn.query(sql, function(err, results) {
             if (err) {message.channel.send("Error!")};
             message.channel.send("Success!");
 		});
-		connection.release();
     }
     }
 
