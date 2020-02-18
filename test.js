@@ -6,10 +6,10 @@ const talkedRecently = new Set();
 const mysql = require('mysql');
  
 var conn = mysql.createConnection({
-  database: 'botdiscord',
-  host: "207.148.70.116",
-  user: "botdiscord",
-  password: "Zhang6666"
+  database: 'heroku_f5ade555c3d61d0',
+  host: "us-cdbr-iron-east-04.cleardb.net",
+  user: "be2b476c9358e7",
+  password: "7c276e3d"
 });
  
 conn.connect(function(err) {
