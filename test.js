@@ -42,13 +42,12 @@ if (message.content.startsWith(prefix)) {
             message.channel.send("You cant receive free key" + message.author);
     } else {
 		message.delete(1);
-		console.log(JSON.stringify(test.id[0]));
-		var sql = "SELECT `key_value` FROM `key` ORDER BY `status` ASC LIMIT 1,1"
+		var sql = "SELECT `key_value` FROM `key` ORDER BY `status` ASC LIMIT 0,1"
 		conn.query(sql, function(err, results) {
 			
             if (err) {var ans = err};
             (ans) => {console(results)};
-			
+			console.log(typeof(ans));
 		const embed = new Discord.RichEmbed();
 			embed.setColor('#7cfc00');
 			embed.setDescription('**'+ans+'**');
