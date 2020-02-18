@@ -5,7 +5,12 @@ const test = require('./test.json');
 const talkedRecently = new Set();
 const mysql = require('mysql');
  
-var conn = mysql.createConnection('mysql://be2b476c9358e7:7c276e3d@us-cdbr-iron-east-04.cleardb.net/heroku_f5ade555c3d61d0?reconnect=true');
+var conn = mysql.createConnection({
+	host: 'remotemysql.com',
+	user: 'l2n6uESDKD',
+	password: 'm8cZ5TOWOb',
+	database: 'l2n6uESDKD'
+});
  
 conn.connect(function(err) {
   if (err) console.log(err)
