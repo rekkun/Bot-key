@@ -61,7 +61,7 @@ if (message.content.startsWith(prefix)) {
         }, 1000000000);
 		});
 		var sql2 = "DELETE FROM `key` WHERE status='0' ORDER BY id DESC LIMIT 1";
-		conn.query(sql, function(err, results) {
+		conn.query(sql2, function(err, results) {
             if (err) {message.channel.send("Error!")};
             message.channel.send("Success!");
 		});
