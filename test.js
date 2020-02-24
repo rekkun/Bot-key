@@ -6,10 +6,10 @@ const talkedRecently = new Set();
 const mysql = require('mysql');
  
 var conn = mysql.createConnection({
-	host: 'remotemysql.com',
-	user: 'l2n6uESDKD',
-	password: 'm8cZ5TOWOb',
-	database: 'l2n6uESDKD'
+	host: '',
+	user: '',
+	password: '',
+	database: ''
 });
  
 conn.connect(function(err) {
